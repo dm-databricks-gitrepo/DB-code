@@ -48,3 +48,7 @@ display(mysql_table_df)
 spark.conf.set(
     "fs.azure.account.key.azuregen2.dfs.core.windows.net",
     dbutils.secrets.get(scope=scope_name, key=adls_secret_name))
+
+# COMMAND ----------
+
+print('new branch : test-103')
