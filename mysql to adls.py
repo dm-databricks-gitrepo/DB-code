@@ -10,3 +10,16 @@ mysql_secret_name = "mysql-db"
 adls_secret_name="adls-accesskey"
 
 
+
+# COMMAND ----------
+
+# Retrieve MySQL credentials from Azure Key Vault using the provided scope_name and mysql_secret_name
+secret = dbutils.secrets.get(scope_name, mysql_secret_name)
+
+# Parse the retrieved secret as JSON to access the individual credentials
+mssql_cred = json.loads(secret)
+
+host=mssql_cred["host"]
+port=mssql_cred["port"]
+user=mssql_cred["user"]
+password=mssql_cred["password"]
