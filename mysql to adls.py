@@ -41,3 +41,5 @@ mysql_table_df = (spark.read
   .load()
 )
 display(mysql_table_df)
+
+print("hello")
